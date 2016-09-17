@@ -12,10 +12,10 @@
     <packaging>war</packaging>
 
     <properties>
-        <jdk.version>1.7</jdk.version>
-        <jdk.home>${env.JAVA_7_HOME}</jdk.home>
+        <jdk.version>1.8</jdk.version>
+        <jdk.home>${env.JAVA_HOME}</jdk.home>
         <maven.build.timestamp.format>yyyyMMddHHmmss</maven.build.timestamp.format>
-        <sniffer.artifactid>java17</sniffer.artifactid>
+        <sniffer.artifactid>java18</sniffer.artifactid>
     </properties>
 
     <dependencies>
@@ -355,6 +355,7 @@
         </resources>
 
         <plugins>
+            <!--
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
@@ -476,6 +477,7 @@
                     </execution>
                 </executions>
             </plugin>
+            -->
         </plugins>
     </build>
     <profiles>
