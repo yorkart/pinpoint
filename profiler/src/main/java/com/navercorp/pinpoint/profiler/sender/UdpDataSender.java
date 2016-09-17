@@ -82,6 +82,7 @@ public class UdpDataSender extends AbstractDataSender implements DataSender {
 
     @Override
     public boolean send(TBase<?, ?> data) {
+        logger.info("\n==> udp send:"+data.toString());
         return executor.execute(data);
     }
 

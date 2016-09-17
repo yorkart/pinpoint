@@ -83,6 +83,7 @@ public class TcpDataSender extends AbstractDataSender implements EnhancedDataSen
     
     @Override
     public boolean send(TBase<?, ?> data) {
+        logger.info("\n==> tcp send:"+data.toString());
         return executor.execute(data);
     }
 
@@ -93,12 +94,14 @@ public class TcpDataSender extends AbstractDataSender implements EnhancedDataSen
 
     @Override
     public boolean request(TBase<?, ?> data, int retryCount) {
+        logger.info("\n==> tcp send retry:"+data.toString());
         RequestMarker message = new RequestMarker(data, retryCount);
         return executor.execute(message);
     }
 
     @Override
     public boolean request(TBase<?, ?> data, FutureListener<ResponseMessage> listener) {
+        logger.info("\n==> tcp listener:"+data.toString());
         RequestMarker message = new RequestMarker(data, listener);
         return executor.execute(message);
     }
