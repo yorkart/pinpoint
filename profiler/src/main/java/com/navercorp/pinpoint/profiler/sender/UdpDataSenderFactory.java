@@ -27,9 +27,12 @@ public final class UdpDataSenderFactory {
         return create(UdpDataSenderType.valueOf(typeName));
     }
 
+    // TODO by wangyue
+    // TODO type must by OIO, the serializer and deserializer different between the two type
     public DataSender create(UdpDataSenderType type) {
         if (type == UdpDataSenderType.NIO) {
-            return new NioUDPDataSender(host, port, threadName, queueSize, timeout, sendBufferSize);
+//            return new NioUDPDataSender(host, port, threadName, queueSize, timeout, sendBufferSize);
+            throw new IllegalArgumentException("Unknown type.");
         } else if (type == UdpDataSenderType.OIO) {
             return new UdpDataSender(host, port, threadName, queueSize, timeout, sendBufferSize);
         } else {
