@@ -47,9 +47,9 @@ public class Span extends TSpan implements FrameAttachment {
 
         final String transactionAgentId = traceId.getAgentId();
         if (!agentId.equals(transactionAgentId)) {
-            this.setTransactionId(TransactionIdUtils.formatByteBuffer(transactionAgentId, traceId.getAgentStartTime(), traceId.getTransactionSequence()));
+            this.setTransactionId(TransactionIdUtils.formatByteBufferEx(transactionAgentId, traceId.getAgentStartTime(), traceId.getTransactionSequence()));
         } else {
-            this.setTransactionId(TransactionIdUtils.formatByteBuffer(null, traceId.getAgentStartTime(), traceId.getTransactionSequence()));
+            this.setTransactionId(TransactionIdUtils.formatByteBufferEx(null, traceId.getAgentStartTime(), traceId.getTransactionSequence()));
         }
 
         this.setSpanId(traceId.getSpanId());

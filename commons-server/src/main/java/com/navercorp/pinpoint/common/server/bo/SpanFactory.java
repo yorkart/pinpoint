@@ -201,7 +201,7 @@ public class SpanFactory {
     }
 
     private TransactionId newTransactionId(byte[] transactionIdBytes, BasicSpan basicSpan) {
-        final TransactionId transactionId = TransactionIdUtils.parseTransactionId(transactionIdBytes);
+        final TransactionId transactionId = TransactionIdUtils.parseTransactionIdEx(transactionIdBytes);
         String transactionAgentId = transactionId.getAgentId();
         if (transactionAgentId != null) {
             return transactionId;

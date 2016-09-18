@@ -21,6 +21,7 @@ import com.navercorp.pinpoint.common.buffer.Buffer;
 import com.navercorp.pinpoint.common.buffer.FixedBuffer;
 
 import java.nio.ByteBuffer;
+import java.util.Arrays;
 
 /**
  * @author emeroad
@@ -60,6 +61,18 @@ public final class TransactionIdUtils {
         return buffer.wrapByteBuffer();
     }
 
+    public static ByteBuffer formatByteBufferEx(String agentId, long agentStartTime, long transactionSequence) {
+        String str = formatString(agentId == null ? "" : agentId, agentStartTime, transactionSequence);
+        char[] cs = str.toCharArray();
+        byte[] bytes = new byte[cs.length];
+        for (int i = 0; i < cs.length; i++) {
+            bytes[i] = (byte) cs[i];
+        }
+
+        System.out.printf("formatByteBufferSimply:" + Arrays.toString(bytes));
+        return ByteBuffer.wrap(bytes);
+    }
+
     private static Buffer writeTransactionId(String agentId, long agentStartTime, long transactionSequence) {
         // agentId may be null
         // version + prefixed size + string + long + long
@@ -89,6 +102,23 @@ public final class TransactionIdUtils {
         } else {
             return new TransactionId(agentId, agentStartTime,transactionSequence);
         }
+    }
+
+    public static TransactionId parseTransactionIdEx(final byte[] transactionId) {
+        if (transactionId == null) {
+            throw new NullPointerException("transactionId must not be null");
+        }
+        System.out.printf("parseTransactionIdSimply:" + Arrays.toString(transactionId));
+        char[] cs = new char[transactionId.length];
+        for (int i = 0; i < transactionId.length; i++) {
+            cs[i] = (char) transactionId[i];
+        }
+
+        TransactionId tid = parseTransactionId(new String(cs));
+        if ("".equals(tid.getAgentId())) {
+            return new TransactionId(tid.getAgentStartTime(), tid.getTransactionSequence());
+        }
+        return tid;
     }
 
     public static TransactionId parseTransactionId(final String transactionId) {
