@@ -307,6 +307,7 @@ public class TCPReceiver {
                 TBase result = dispatchHandler.dispatchRequestMessage(tBase);
                 if (result != null) {
                     byte[] resultBytes = SerializationUtils.serialize(result, serializerFactory);
+                    logger.info("response result " + result.toString());
                     pinpointSocket.response(requestPacket, resultBytes);
                 }
             } catch (TException e) {
