@@ -357,7 +357,7 @@
         </resources>
 
         <plugins>
-
+<!--
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
@@ -370,7 +370,7 @@
                     </webResources>
                 </configuration>
             </plugin>
-            <!--
+
             <plugin>
                 <groupId>com.spotify</groupId>
                 <artifactId>docker-maven-plugin</artifactId>
@@ -413,7 +413,7 @@
                     </runs>
                 </configuration>
             </plugin>
-            -->
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-antrun-plugin</artifactId>
@@ -451,7 +451,6 @@
                     <installDirectory>target</installDirectory>
                 </configuration>
                 <executions>
-                    <!--&lt;!&ndash;-->
                     <execution>
                         <id>install node and npm</id>
                         <goals>
@@ -462,7 +461,6 @@
                             <npmVersion>3.9.6</npmVersion>
                         </configuration>
                     </execution>
-                    <!--&ndash;&gt;-->
                     <execution>
                         <id>npm install</id>
                         <goals>
@@ -483,7 +481,7 @@
                     </execution>
                 </executions>
             </plugin>
-
+-->
         </plugins>
     </build>
     <profiles>
