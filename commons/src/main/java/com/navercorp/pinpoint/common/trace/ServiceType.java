@@ -232,4 +232,6 @@ public interface ServiceType {
     ServiceType SPRING_ORM_IBATIS = of(5061, "SPRING_ORM_IBATIS", "SPRING");
     // FIXME need to define how to handle spring related codes
 //    ServiceType SPRING_BEAN = of(5071, "SPRING_BEAN", "SPRING_BEAN", NORMAL_SCHEMA);
+
+    ServiceType CSHARP = of(1120, "CSHARP");
 }

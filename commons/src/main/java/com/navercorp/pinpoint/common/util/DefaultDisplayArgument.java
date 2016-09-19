@@ -34,6 +34,8 @@ public class DefaultDisplayArgument {
     
     public static final DisplayArgumentMatcher COLLECTOR_MATCHER = createArgumentMatcher(ServiceType.COLLECTOR, AnnotationKey.ARGS0);
 
+    public static final DisplayArgumentMatcher CSHARP_MATCHER = createArgumentMatcher(ServiceType.CSHARP, AnnotationKey.ARGS0);
+
 
     private static AnnotationKeyMatcher createMatcher(AnnotationKey displayArgument) {
         return AnnotationKeyMatchers.exact(displayArgument);

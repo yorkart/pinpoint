@@ -46,6 +46,8 @@
                     'CUBRID_GROUP': 'CUBRID.png',
                     'JAVA': 'JAVA.png',
                     'JAVA_GROUP': 'JAVA.png',
+                    'CSHARP': 'CSHARP.png',
+                    'CSHARP_GROUP': 'CSHARP.png',
                     'MEMCACHED': 'MEMCACHED.png',
                     'MEMCACHED_GROUP': 'MEMCACHED.png',
                     'MONGODB': 'MONGODB.png',
