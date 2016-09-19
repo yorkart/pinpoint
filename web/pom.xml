@@ -451,7 +451,7 @@
                     <installDirectory>target</installDirectory>
                 </configuration>
                 <executions>
-                    <!--
+                    <!--&lt;!&ndash;-->
                     <execution>
                         <id>install node and npm</id>
                         <goals>
@@ -462,7 +462,7 @@
                             <npmVersion>3.9.6</npmVersion>
                         </configuration>
                     </execution>
-                    -->
+                    <!--&ndash;&gt;-->
                     <execution>
                         <id>npm install</id>
                         <goals>
