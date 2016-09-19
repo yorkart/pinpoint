@@ -64,7 +64,7 @@ public final class SpanUtils {
             throw new NullPointerException("span must not be null");
         }
         final byte[] transactionIdBytes = span.getTransactionId();
-        TransactionId transactionId = TransactionIdUtils.parseTransactionId(transactionIdBytes);
+        TransactionId transactionId = TransactionIdUtils.parseTransactionIdEx(transactionIdBytes);
         String agentId = transactionId.getAgentId();
         if (agentId == null) {
             agentId = span.getAgentId();
