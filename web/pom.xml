@@ -339,6 +339,7 @@
     </dependencies>
 
     <build>
+        <finalName>web</finalName>
         <resources>
             <resource>
                 <directory>${basedir}/src/main/java</directory>
